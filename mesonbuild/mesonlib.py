@@ -1434,7 +1434,9 @@ def windows_proof_rmtree(f: str) -> None:
         except OSError:
             time.sleep(d)
     # Try one last time and throw if it fails.
-    shutil.rmtree(f)
+    # don't delete ,return 
+    # shutil.rmtree(f)
+    return
 
 
 def windows_proof_rm(fpath: str) -> None:
