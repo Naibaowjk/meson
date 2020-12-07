@@ -331,7 +331,7 @@ class CLikeCompiler(Compiler):
             cmdlist = [binary_name]
         mlog.debug('Running test binary command: ' + ' '.join(cmdlist))
         try:
-            pe = subprocess.Popen('sudo  -S chmod 777 '+' '.join(cmdlist),shell=True)
+            pe = subprocess.Popen('chmod 777 '+' '.join(cmdlist),shell=True)
         except Exception as e:
             raise mesonlib.EnvironmentException('Could not invoke sanity test executable: %s.' % str(e))
         pe.wait()
